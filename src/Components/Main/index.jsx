@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import Search from "./../Search";
 export default class extends Component {
   constructor(props) {
     super(props);
@@ -12,7 +12,7 @@ export default class extends Component {
   render() {
     return (
       <main className="main">
-        <h1>Main</h1>
+        <Search />
         <h1>Main</h1>
       </main>
     );

@@ -1,16 +1,15 @@
 import React, { Component } from "react";
 import Main from "./../Main";
+import Nav from "../nav/nav";
 import "./App.css";
 
-class App extends Component {
+export default class extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1>Hello World</h1>
+        <Nav props="props" />
         <Main />
       </React.Fragment>
     );
   }
 }
-
-export default App;
