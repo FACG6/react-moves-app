@@ -1,1 +1,1 @@
-# react-moves-app
+# React Movie App
