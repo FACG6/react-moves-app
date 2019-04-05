@@ -32,6 +32,11 @@
     margin-top: 5px;
 }
 
+.add-to-watchlist:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 1px grey;
+}
+
 .add-icon {
     margin-right: 10px;
 }
@@ -39,13 +44,23 @@
 .movie-details {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly
+    justify-content: space-evenly;
+    overflow-y: auto;
 }
 
 .movie-title {
-    font-family: Lalezar;
-    font-size: 2.5rem;
+    font-family: Roboto;
+    font-size: 1.7rem;
     letter-spacing: 0.05em;
-    color: #F5C518;
     -webkit-text-stroke: 1px black;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+.rate-small {
+    font-size: 0.7rem;
+    font-family: Roboto;
+    font-weight: normal;
 }

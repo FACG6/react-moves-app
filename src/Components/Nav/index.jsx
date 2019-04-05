@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import "./nav.css";
+import React from "react";
+import "./style.css";
 
 export default props => (
   <nav className="nav">
