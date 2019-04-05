@@ -10,7 +10,7 @@ export default class extends Component {
   }
   render() {
     return (
-      <div className="search">
+      <section className="search">
         {/* form section */}
         <form action="" className="form">
           <input type="text" className="search-input" />
@@ -28,7 +28,7 @@ export default class extends Component {
             <option value="Comedy">Comedy</option>
             <option value="Horror">Horror</option>
           </select>
-          <select name="rate" className="drop-down rate" placeholder="Rate">
+          <select name="rate" className="drop-down rate">
             <option value="" disabled selected>
               Rate
             </option>
@@ -37,7 +37,7 @@ export default class extends Component {
             <option value="Above 8.0">Above 8.0</option>
           </select>
         </div>
-      </div>
+      </section>
     );
   }
 }

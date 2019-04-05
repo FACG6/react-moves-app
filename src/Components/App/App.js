@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Main from "./../Main";
-import Nav from "../nav/nav";
+import Nav from "./../Nav";
 import "./App.css";
 
 export default class extends Component {
