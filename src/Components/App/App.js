@@ -1,12 +1,15 @@
-import React, { Component } from 'react';
-import './App.css';
-import Nav from '../nav/nav'
-class App extends Component {
+import React, { Component } from "react";
+import Main from "./../Main";
+import Nav from "./../Nav";
+import "./App.css";
+
+export default class extends Component {
   render() {
     return (
-      <Nav props='props' />
+      <React.Fragment>
+        <Nav props="props" />
+        <Main />
+      </React.Fragment>
     );
   }
 }
-
-export default App;
