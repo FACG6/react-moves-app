@@ -17,10 +17,13 @@ export default ({ title, overview, releaseDate, rate, poster }) => (
     <div className="movie-details">
       <span className="movie-title">{title}</span>
       <span className="movie-date">{releaseDate}</span>
-      <span className="movie-cat">Category</span>
-      <span className="movie-rate">Rate: {rate}</span>
+      <span className="movie-cat">Category:</span>
+      <span className="movie-rate">
+        <span className="bold-text">Rate:</span> {rate}{" "}
+        <span className="rate-small">/10</span>{" "}
+      </span>
       <div className="overview">
-        <span className="overview-text text">Overview : </span>
+        <span className="overview-text text bold-text">Overview : </span>
         <p className="overview-description">{overview}</p>
       </div>
     </div>

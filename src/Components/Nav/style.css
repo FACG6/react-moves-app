@@ -1,0 +1,42 @@
+.nav {
+    background: #191919;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    position: fixed;
+    width: 1351px;
+}
+
+.logo {
+    background: #F5C518;
+    width: 140px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: lalezar;
+    border-radius: 5px;
+    font-size: 1.8rem;
+    margin-left: 35px;
+}
+
+.welcome-text {
+    color: #fff;
+    font-family: Roboto;
+    margin-right: 25px;
+    font-size: 1.4rem;
+}
+
+.navigate {
+    color: #F5C518;
+    font-family: Roboto;
+    margin-right: 25px;
+    font-size: 1.4rem;
+    margin-right: 35px;
+    text-decoration: none;
+}
+
+.navigate:hover {
+    text-decoration: underline;
+}

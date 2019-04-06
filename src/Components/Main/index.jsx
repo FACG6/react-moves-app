@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Search from "./../Search";
 import Movies from "./../Movies";
 import getTrends from "./../../utilis/getTrends";
+import "./style.css";
 
 export default class extends Component {
   constructor(props) {

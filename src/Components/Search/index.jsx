@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./style.css";
 
 export default class extends Component {
   constructor(props) {
@@ -13,8 +14,14 @@ export default class extends Component {
       <section className="search">
         {/* form section */}
         <form action="" className="form">
-          <input type="text" className="search-input" />
-          <i className="search-icon" />
+          <input
+            type="text"
+            placeholder="Search for a movie"
+            className="search-input"
+          />
+          <div className="search-icon-div">
+            <i class="search-icon fas fa-search" />
+          </div>
         </form>
         {/* filter section */}
         <div className="filter-div">
