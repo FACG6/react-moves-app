@@ -20,10 +20,11 @@ export default class extends Component {
     });
   }
   render() {
+    const { setIsRender, addToWatchList}=this.props;
     return (
       <main className="main">
         <Search />
-        <Movies movies={this.state.movies} />
+        <Movies movies={this.state.movies} onClick={()=> setIsRender(true)} addToWatchList={addToWatchList}/>
       </main>
     );
   }

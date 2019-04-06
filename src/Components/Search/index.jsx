@@ -20,7 +20,7 @@ export default class extends Component {
             className="search-input"
           />
           <div className="search-icon-div">
-            <i class="search-icon fas fa-search" />
+            <i className="search-icon fas fa-search" />
           </div>
         </form>
         {/* filter section */}
