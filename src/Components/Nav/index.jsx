@@ -8,12 +8,8 @@ export default props => (
     </div>
     <div className="navigation">
       <span className="welcome-text text">Hello Ahmed</span>
-      <a
-        href="#"
-        onClick={() => props.setIsRender(true)}
-        className="navigate text"
-      >
-        Watchlist
+      <a href={props.href} className="navigate text">
+        {props.value}
       </a>
     </div>
   </nav>
