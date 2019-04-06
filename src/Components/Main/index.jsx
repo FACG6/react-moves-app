@@ -17,7 +17,7 @@ export default class extends Component {
     this.submitSearch = this.submitSearch.bind(this);
     this.addToWatchList = this.addToWatchList.bind(this);
   }
-  addToWatchList({ title, overview, releaseDate, poster, rate, id }) {
+  addToWatchList({ title, overview, releaseDate, poster, rate, id, genres }) {
     const watchlist = JSON.parse(window.localStorage.getItem("watchlist"));
     const ids = JSON.parse(window.localStorage.getItem("ids"));
     if (!watchlist) {
@@ -30,6 +30,7 @@ export default class extends Component {
             release_date: releaseDate,
             poster_path: poster,
             rate,
+            genre_ids: genres,
             id
           }
         ])
@@ -47,6 +48,7 @@ export default class extends Component {
             release_date: releaseDate,
             poster_path: poster,
             rate,
+            genre_ids: genres,
             id
           }
         ])

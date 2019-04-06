@@ -12,6 +12,7 @@ export default props => (
         poster={movie.poster_path}
         releaseDate={movie.release_date}
         rate={movie.vote_average}
+        genres={movie.genre_ids}
         btnAction={props.btnAction}
         btnText={props.btnText}
       />

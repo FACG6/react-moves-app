@@ -1,4 +1,5 @@
 import React from "react";
+import { GENRES } from "./../../config";
 import "./style.css";
 
 export default ({
@@ -9,7 +10,8 @@ export default ({
   poster,
   id,
   btnAction,
-  btnText
+  btnText,
+  genres
 }) => (
   <div className="movie-card">
     <div className="image-watchlist">
@@ -21,7 +23,7 @@ export default ({
       <div
         className="add-to-watchlist"
         onClick={() =>
-          btnAction({ title, releaseDate, rate, overview, poster, id })
+          btnAction({ title, releaseDate, rate, overview, poster, id, genres })
         }
       >
         <i
@@ -35,7 +37,12 @@ export default ({
     <div className="movie-details">
       <span className="movie-title">{title}</span>
       <span className="movie-date">{releaseDate}</span>
-      <span className="movie-cat">Category:</span>
+      <span className="movie-cat">
+        <span className="bold-text">Categories: </span>
+        {genres.map(genre => (
+          <div>{GENRES.find(ele => ele.id === genre).name}</div>
+        ))}
+      </span>
       <span className="movie-rate">
         <span className="bold-text">Rate:</span> {rate}
         <span className="rate-small">/10</span>
