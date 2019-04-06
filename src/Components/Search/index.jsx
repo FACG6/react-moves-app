@@ -13,11 +13,13 @@ export default class extends Component {
     return (
       <section className="search">
         {/* form section */}
-        <form action="" className="form">
+        <form onSubmit={this.props.submitSearch} className="form">
           <input
             type="text"
             placeholder="Search for a movie"
             className="search-input"
+            onChange={this.props.updateSearchValue}
+            value={this.props.searchValue}
           />
           <div className="search-icon-div">
             <i className="search-icon fas fa-search" />

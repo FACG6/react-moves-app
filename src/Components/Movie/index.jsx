@@ -1,7 +1,15 @@
 import React from "react";
 import "./style.css";
 
-export default ({ title, overview, releaseDate, rate, poster,onClick,addToWatchList  }) => (
+export default ({
+  title,
+  overview,
+  releaseDate,
+  rate,
+  poster,
+  onClick,
+  addToWatchList
+}) => (
   <div className="movie-card">
     <div className="image-watchlist">
       <img
@@ -9,12 +17,17 @@ export default ({ title, overview, releaseDate, rate, poster,onClick,addToWatchL
         alt="Poster"
         className="poster"
       />
-      <div className="add-to-watchlist" >
+      <div className="add-to-watchlist">
         <i className="add-icon fas fa-plus-circle" />
-        <span className="add-to-watchlist-text text" onClick={() => {
-          onClick();
-          addToWatchList({title, overview, releaseDate, rate, poster });
-        }}>Add to watchlist</span>
+        <span
+          className="add-to-watchlist-text text"
+          onClick={() => {
+            onClick();
+            addToWatchList({ title, overview, releaseDate, rate, poster });
+          }}
+        >
+          Add to watchlist
+        </span>
       </div>
     </div>
     <div className="movie-details">
