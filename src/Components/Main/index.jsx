@@ -15,10 +15,47 @@ export default class extends Component {
     };
     this.updateSearchValue = this.updateSearchValue.bind(this);
     this.submitSearch = this.submitSearch.bind(this);
+    this.addToWatchList = this.addToWatchList.bind(this);
+  }
+  addToWatchList({ title, overview, releaseDate, poster, rate, id }) {
+    const watchlist = JSON.parse(window.localStorage.getItem("watchlist"));
+    const ids = JSON.parse(window.localStorage.getItem("ids"));
+    if (!watchlist) {
+      window.localStorage.setItem(
+        "watchlist",
+        JSON.stringify([
+          {
+            title,
+            overview,
+            release_date: releaseDate,
+            poster_path: poster,
+            rate,
+            id
+          }
+        ])
+      );
+      window.localStorage.setItem("ids", JSON.stringify([id]));
+    } else if (ids.includes(id)) return;
+    else {
+      window.localStorage.setItem(
+        "watchlist",
+        JSON.stringify([
+          ...watchlist,
+          {
+            title,
+            overview,
+            release_date: releaseDate,
+            poster_path: poster,
+            rate,
+            id
+          }
+        ])
+      );
+      window.localStorage.setItem("ids", JSON.stringify([...ids, id]));
+    }
   }
   updateSearchValue(e) {
     this.setState({ searchValue: e.target.value });
-    // this.state.searchValue = e.target.value;
   }
   submitSearch(e) {
     e.preventDefault();
@@ -50,7 +87,11 @@ export default class extends Component {
             ? "Your Search Results"
             : "Top Watched movies for this week"}
         </div>
-        <Movies movies={this.state.movies} />
+        <Movies
+          btnAction={this.addToWatchList}
+          btnText="Add to watchlist"
+          movies={this.state.movies}
+        />
       </main>
     );
   }
