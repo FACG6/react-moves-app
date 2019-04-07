@@ -19,12 +19,24 @@ export default () => (
         )}
       />
       <Route
+        exact
         path={"/watchlist"}
         component={() => (
           <React.Fragment>
             <Nav value="Home Page" href="/" />
             <WatchList />
           </React.Fragment>
+        )}
+      />
+      <Route
+        component={() => (
+          <img
+            src="http://www.gmailsupportpedia.com/images/404.jpg"
+            style={{
+              "margin-left": "25%"
+            }}
+            alt="404 PAGE NOT FOUND"
+          />
         )}
       />
     </Switch>

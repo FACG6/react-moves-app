@@ -16,11 +16,12 @@ export default ({
           key={movie.id}
           id={movie.id}
           title={movie.title}
-          overview={movie.overview}
-          poster={movie.poster_path}
-          releaseDate={movie.release_date}
-          rate={movie.vote_average}
-          genres={movie.genre_ids}
+          overview={movie.summary}
+          poster={movie.large_cover_image}
+          releaseDate={movie.year}
+          rate={movie.rating}
+          genres={movie.genres}
+          download={movie.torrents[0]}
           btnAction={
             isInWatchlist(movie.id) ? removeFromWatchlist : addToWatchlist
           }
