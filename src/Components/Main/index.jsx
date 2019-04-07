@@ -14,17 +14,18 @@ export default class extends Component {
       movies: [],
       userDidSearch: false,
       userDidAdd: false,
-      filter: {
-        genre: "",
-        rate: "",
-        quality: ""
-      }
+      genre: "",
+      rate: "",
+      quality: ""
     };
     this.updateSearchValue = this.updateSearchValue.bind(this);
     this.submitSearch = this.submitSearch.bind(this);
     this.addToWatchlist = this.addToWatchlist.bind(this);
     this.removeFromWatchlist = this.removeFromWatchlist.bind(this);
     this.isInWatchlist = this.isInWatchlist.bind(this);
+    this.updateGenre = this.updateGenre.bind(this);
+    this.updateRate = this.updateRate.bind(this);
+    this.updateQuality = this.updateQuality.bind(this);
   }
   addToWatchlist({
     title,
@@ -107,7 +108,12 @@ export default class extends Component {
   submitSearch(e) {
     e.preventDefault();
     if (!this.state.searchValue.trim()) return;
-    getMovie(this.state.searchValue).then(response => {
+    getMovie(
+      this.state.searchValue,
+      this.state.genre,
+      this.state.quality,
+      this.state.rate
+    ).then(response => {
       this.setState({
         movies: response.data.movies,
         userDidSearch: true
@@ -143,6 +149,20 @@ export default class extends Component {
     if (!ids) return false;
     return ids.includes(id);
   }
+  updateGenre(e) {
+    const genre = e.target.value === "all" ? "" : `&genre=${e.target.value}`;
+    this.setState({ genre });
+  }
+  updateRate(e) {
+    const rate =
+      e.target.value === "all" ? "" : `&minimum_rating=${e.target.value}`;
+    this.setState({ rate });
+  }
+  updateQuality(e) {
+    const quality =
+      e.target.value === "all" ? "" : `&quality=${e.target.value}`;
+    this.setState({ quality });
+  }
   componentDidMount() {
     getTrends().then(response => {
       this.setState({
@@ -158,7 +178,9 @@ export default class extends Component {
           updateSearchValue={this.updateSearchValue}
           searchValue={this.state.searchValue}
           submitSearch={this.submitSearch}
-          filter={this.filter}
+          updateGenre={this.updateGenre}
+          updateRate={this.updateRate}
+          updateQuality={this.updateQuality}
         />
         <div className="movies-type">
           {this.state.userDidSearch ? (
