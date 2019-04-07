@@ -35,19 +35,21 @@ export default ({
       </div>
     </div>
     <div className="movie-details">
-      <span className="movie-title">{title}</span>
-      <span className="movie-date">{releaseDate}</span>
-      <span className="movie-cat">
+      <span className="movie-title movie-details-item">{title}</span>
+      <span className="movie-date movie-details-item">
+        <span className="bold-text">Release Date: </span> {releaseDate}
+      </span>
+      <span className="movie-cat movie-details-item">
         <span className="bold-text">Categories: </span>
         {genres.map(genre => (
           <div key={genre}>{GENRES.find(ele => ele.id === genre).name}</div>
         ))}
       </span>
-      <span className="movie-rate">
+      <span className="movie-rate movie-details-item">
         <span className="bold-text">Rate:</span> {rate}
         <span className="rate-small">/10</span>
       </span>
-      <div className="overview">
+      <div className="overview movie-details-item">
         <span className="overview-text text bold-text">Overview : </span>
         <p className="overview-description">{overview}</p>
       </div>
