@@ -23,7 +23,6 @@
 }
 
 .add-to-watchlist {
-    background: #F5C518;
     height: 35px;
     display: flex;
     justify-content: center;
@@ -31,6 +30,15 @@
     font-size: 1.4rem;
     border-radius: 5px;
     margin-top: 5px;
+}
+
+.add {
+    background: #F5C518;
+}
+
+.remove {
+    background: #b30000;
+    color: #fff;
 }
 
 .add-to-watchlist:hover {

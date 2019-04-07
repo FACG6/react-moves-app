@@ -11,7 +11,8 @@ export default ({
   id,
   btnAction,
   btnText,
-  genres
+  genres,
+  add
 }) => (
   <div className="movie-card">
     <div className="image-watchlist">
@@ -21,7 +22,7 @@ export default ({
         className="poster"
       />
       <div
-        className="add-to-watchlist"
+        className={`add-to-watchlist ${add ? "add" : "remove"}`}
         onClick={() =>
           btnAction({ title, releaseDate, rate, overview, poster, id, genres })
         }

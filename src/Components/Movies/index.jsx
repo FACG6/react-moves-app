@@ -29,6 +29,7 @@ export default ({
               ? "Remove from watchlist"
               : "Add to watchlist"
           }
+          add={isInWatchlist(movie.id) ? false : true}
         />
       );
     })}
