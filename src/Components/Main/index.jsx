@@ -30,11 +30,11 @@ export default class extends Component {
         JSON.stringify([
           {
             title,
-            overview,
-            release_date: releaseDate,
-            poster_path: poster,
-            rate,
-            genre_ids: genres,
+            summary: overview,
+            year: releaseDate,
+            large_cover_image: poster,
+            rating: rate,
+            genres,
             id
           }
         ])
@@ -60,11 +60,11 @@ export default class extends Component {
           ...watchlist,
           {
             title,
-            overview,
-            release_date: releaseDate,
-            poster_path: poster,
-            rate,
-            genre_ids: genres,
+            summary: overview,
+            year: releaseDate,
+            large_cover_image: poster,
+            rating: rate,
+            genres,
             id
           }
         ])
@@ -92,7 +92,7 @@ export default class extends Component {
     if (!this.state.searchValue.trim()) return;
     getMovie(this.state.searchValue).then(response => {
       this.setState({
-        movies: response.results.slice(0, 10),
+        movies: response.data.movies,
         userDidSearch: true
       });
     });
@@ -128,7 +128,7 @@ export default class extends Component {
   componentDidMount() {
     getTrends().then(response => {
       this.setState({
-        movies: response.results,
+        movies: response.data.movies,
         userDidSearch: false
       });
     });
