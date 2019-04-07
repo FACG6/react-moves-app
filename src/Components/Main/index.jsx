@@ -123,6 +123,7 @@ export default class extends Component {
   }
   isInWatchlist(id) {
     const ids = JSON.parse(window.localStorage.getItem("ids"));
+    if (!ids) return;
     return ids.includes(id);
   }
   componentDidMount() {

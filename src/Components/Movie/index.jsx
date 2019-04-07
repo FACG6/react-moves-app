@@ -25,7 +25,7 @@ export default ({
       >
         <i
           className={`icon fas fa-${
-            btnText === "Add to watchlist" ? "plus" : "times"
+            btnText === "Add to watchlist" ? "plus" : "minus"
           }-circle`}
         />
         <span className="add-to-watchlist-text text">{btnText}</span>
