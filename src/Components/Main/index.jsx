@@ -26,7 +26,16 @@ export default class extends Component {
     this.removeFromWatchlist = this.removeFromWatchlist.bind(this);
     this.isInWatchlist = this.isInWatchlist.bind(this);
   }
-  addToWatchlist({ title, overview, releaseDate, poster, rate, id, genres }) {
+  addToWatchlist({
+    title,
+    overview,
+    releaseDate,
+    poster,
+    rate,
+    id,
+    genres,
+    torrents
+  }) {
     const watchlist = JSON.parse(window.localStorage.getItem("watchlist"));
     const ids = JSON.parse(window.localStorage.getItem("ids"));
     if (!watchlist) {
@@ -40,7 +49,8 @@ export default class extends Component {
             large_cover_image: poster,
             rating: rate,
             genres,
-            id
+            id,
+            torrents
           }
         ])
       );
@@ -71,7 +81,8 @@ export default class extends Component {
             large_cover_image: poster,
             rating: rate,
             genres,
-            id
+            id,
+            torrents
           }
         ])
       );

@@ -20,7 +20,16 @@ export default ({
       <div
         className={`add-to-watchlist ${add ? "add" : "remove"}`}
         onClick={() =>
-          btnAction({ title, releaseDate, rate, overview, poster, id, genres })
+          btnAction({
+            title,
+            releaseDate,
+            rate,
+            overview,
+            poster,
+            id,
+            genres,
+            torrents: [download]
+          })
         }
       >
         <i
