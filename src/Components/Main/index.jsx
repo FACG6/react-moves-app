@@ -13,7 +13,12 @@ export default class extends Component {
       searchValue: "",
       movies: [],
       userDidSearch: false,
-      userDidAdd: false
+      userDidAdd: false,
+      filter: {
+        genre: "",
+        rate: "",
+        quality: ""
+      }
     };
     this.updateSearchValue = this.updateSearchValue.bind(this);
     this.submitSearch = this.submitSearch.bind(this);
@@ -141,10 +146,11 @@ export default class extends Component {
           updateSearchValue={this.updateSearchValue}
           searchValue={this.state.searchValue}
           submitSearch={this.submitSearch}
+          filter={this.filter}
         />
         <div className="movies-type">
           {this.state.userDidSearch ? (
-            this.state.movies.length !== 0 ? (
+            this.state.movies ? (
               "Your Search Results"
             ) : (
               <img
@@ -160,7 +166,7 @@ export default class extends Component {
           addToWatchlist={this.addToWatchlist}
           removeFromWatchlist={this.removeFromWatchlist}
           isInWatchlist={this.isInWatchlist}
-          movies={this.state.movies}
+          movies={this.state.movies ? this.state.movies : []}
         />
       </main>
     );
