@@ -40,7 +40,7 @@ export default ({
       <span className="movie-cat">
         <span className="bold-text">Categories: </span>
         {genres.map(genre => (
-          <div>{GENRES.find(ele => ele.id === genre).name}</div>
+          <div key={genre}>{GENRES.find(ele => ele.id === genre).name}</div>
         ))}
       </span>
       <span className="movie-rate">
