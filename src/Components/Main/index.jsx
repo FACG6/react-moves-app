@@ -45,6 +45,7 @@ export default class extends Component {
         ])
       );
       window.localStorage.setItem("ids", JSON.stringify([id]));
+      this.setState({ userDidAdd: !this.state.userDidAdd });
     } else if (ids.includes(id)) {
       swal.fire({
         toast: true,
@@ -128,7 +129,7 @@ export default class extends Component {
   }
   isInWatchlist(id) {
     const ids = JSON.parse(window.localStorage.getItem("ids"));
-    if (!ids) return;
+    if (!ids) return false;
     return ids.includes(id);
   }
   componentDidMount() {
