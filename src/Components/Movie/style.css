@@ -24,7 +24,6 @@
 
 .add-to-watchlist {
     height: 35px;
-    border: 2px solid #F5C518;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,10 +34,12 @@
 
 .add {
     background: #F5C518;
+    border: 2px solid #F5C518;
 }
 
 .remove {
     background: #b30000;
+    border: 2px solid #b30000;
     color: #fff;
 }
 
