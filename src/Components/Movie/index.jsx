@@ -36,7 +36,10 @@ export default ({
     </div>
     <div className="movie-details">
       <span className="movie-title">{title}</span>
-      <span className="movie-date">{releaseDate}</span>
+      <span className="movie-date">
+        {" "}
+        <span className="bold-text">Release Date: </span> {releaseDate}
+      </span>
       <span className="movie-cat">
         <span className="bold-text">Categories: </span>
         {genres.map(genre => (

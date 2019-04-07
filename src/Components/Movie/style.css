@@ -1,6 +1,6 @@
 .movie-card {
-    width: 40%;
-    margin: 30px;
+    width: 45%;
+    margin: 10px;
     display: flex;
     justify-content: space-evenly;
     background: #C4C4C4;
@@ -45,7 +45,7 @@
 .movie-details {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     overflow-y: auto;
 }
 
@@ -64,4 +64,8 @@
     font-size: 0.7rem;
     font-family: Roboto;
     font-weight: normal;
+}
+
+.overview-description {
+    text-align: justify;
 }
