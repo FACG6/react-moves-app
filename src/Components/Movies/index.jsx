@@ -2,17 +2,19 @@ import React from "react";
 import Movie from "./../Movie";
 import "./style.css";
 
-export default ({ movies, onClick ,addToWatchList}) => console.log(addToWatchList)|| (
+export default props => (
   <section className="movies">
-    {movies.map(movie => (
+    {props.movies.map(movie => (
       <Movie
-      addToWatchList={addToWatchList}      
-        onClick={onClick}
+        id={movie.id}
         title={movie.title}
         overview={movie.overview}
         poster={movie.poster_path}
         releaseDate={movie.release_date}
         rate={movie.vote_average}
+        genres={movie.genre_ids}
+        btnAction={props.btnAction}
+        btnText={props.btnText}
       />
     ))}
   </section>
