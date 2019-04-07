@@ -3,6 +3,7 @@ import Search from "./../Search";
 import Movies from "./../Movies";
 import getTrends from "./../../utilis/getTrends";
 import getMovie from "./../../utilis/getMovie";
+import swal from "sweetalert2";
 import "./style.css";
 
 export default class extends Component {
@@ -36,8 +37,20 @@ export default class extends Component {
         ])
       );
       window.localStorage.setItem("ids", JSON.stringify([id]));
-    } else if (ids.includes(id)) return;
-    else {
+    } else if (ids.includes(id)) {
+      swal.fire({
+        toast: true,
+        position: "top-left",
+        showConfirmButton: false,
+        timer: 3000,
+        type: "info",
+        title: "Movie already exists in watchlist",
+        customClass: {
+          popup: "popup"
+        }
+      });
+      return;
+    } else {
       window.localStorage.setItem(
         "watchlist",
         JSON.stringify([
@@ -55,6 +68,17 @@ export default class extends Component {
       );
       window.localStorage.setItem("ids", JSON.stringify([...ids, id]));
     }
+    swal.fire({
+      toast: true,
+      position: "top-left",
+      showConfirmButton: false,
+      timer: 3000,
+      type: "success",
+      title: "Added Successfully",
+      customClass: {
+        popup: "popup"
+      }
+    });
   }
   updateSearchValue(e) {
     this.setState({ searchValue: e.target.value });
