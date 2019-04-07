@@ -31,6 +31,15 @@ export default props => (
           <option value="comedy">Comedy</option>
           <option value="sci-fi">SCI-FI</option>
           <option value="horror">Horro</option>
+          <option value="crime">Crime</option>
+          <option value="thriller">Thriller</option>
+          <option value="drama">Drama</option>
+          <option value="animation">Animation</option>
+          <option value="fantasy">Fantasy</option>
+          <option value="mystery">Mystery</option>
+          <option value="adventure">Adventure</option>
+          <option value="superhero">Superhero</option>
+          <option value="war">War</option>
         </select>
       </div>
       <div className="rate-select select">
