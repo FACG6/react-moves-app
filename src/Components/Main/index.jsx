@@ -152,7 +152,7 @@ export default class extends Component {
               />
             )
           ) : (
-            "Top Watched movies for this week"
+            "Trending movies for the year"
           )}
         </div>
         <Movies
