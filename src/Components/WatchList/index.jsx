@@ -35,6 +35,7 @@ export default class extends Component {
             <div className="watchlist-text">My Watchlist</div>
             <Movies
               removeFromWatchlist={this.removeFromWatchlist}
+              add={true}
               movies={movies}
             />
           </React.Fragment>
