@@ -108,6 +108,17 @@ export default class extends Component {
 
     window.localStorage.setItem("watchlist", JSON.stringify(watchlist));
     window.localStorage.setItem("ids", JSON.stringify(ids));
+    swal.fire({
+      toast: true,
+      position: "top-left",
+      showConfirmButton: false,
+      timer: 3000,
+      type: "success",
+      title: "Removed Successfully from watchlist",
+      customClass: {
+        popup: "popup"
+      }
+    });
     this.setState({ userDidAdd: !this.state.userDidAdd });
   }
   isInWatchlist(id) {
