@@ -31,3 +31,18 @@ export default class extends Component {
     );
   }
 }
+{/* <div>
+            {
+                props.watchlist.map(obj => <Movie {...obj}/>)
+            }
+        </div> */}
+        // <div>
+        //     {
+        //         props.watchlist.map(obj => (
+        //             <div>
+        //                 <span>{obj.title}</span>
+        //                 <span></span>
+        //             </div>
+        //         ))
+        //     }
+        // </div>
