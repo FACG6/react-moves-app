@@ -6,6 +6,7 @@ export default ({ movies, btnAction, btnText }) => (
   <section className="movies">
     {movies.map(movie => (
       <Movie
+        key={movie.id}
         id={movie.id}
         title={movie.title}
         overview={movie.overview}

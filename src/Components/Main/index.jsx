@@ -10,7 +10,7 @@ export default class extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchValue: null,
+      searchValue: "",
       movies: [],
       userDidSearch: false
     };
@@ -95,7 +95,7 @@ export default class extends Component {
   componentDidMount() {
     getTrends().then(response => {
       this.setState({
-        movies: response.results.slice(0, 10),
+        movies: response.results,
         userDidSearch: false
       });
     });
