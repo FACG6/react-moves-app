@@ -2,9 +2,9 @@ import React from "react";
 import Movie from "./../Movie";
 import "./style.css";
 
-export default props => (
+export default ({ movies, btnAction, btnText }) => (
   <section className="movies">
-    {props.movies.map(movie => (
+    {movies.map(movie => (
       <Movie
         id={movie.id}
         title={movie.title}
@@ -13,8 +13,8 @@ export default props => (
         releaseDate={movie.release_date}
         rate={movie.vote_average}
         genres={movie.genre_ids}
-        btnAction={props.btnAction}
-        btnText={props.btnText}
+        btnAction={btnAction}
+        btnText={btnText}
       />
     ))}
   </section>
