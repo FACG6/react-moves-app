@@ -142,11 +142,18 @@ export default class extends Component {
           submitSearch={this.submitSearch}
         />
         <div className="movies-type">
-          {this.state.userDidSearch
-            ? this.state.movies.length !== 0
-              ? "Your Search Results"
-              : "No Results for your search"
-            : "Top Watched movies for this week"}
+          {this.state.userDidSearch ? (
+            this.state.movies.length !== 0 ? (
+              "Your Search Results"
+            ) : (
+              <img
+                src="https://webmarketingschool.com/wp-content/uploads/2018/03/nojobsfound.png"
+                alt="OOPS! NO RESULTS FOUND"
+              />
+            )
+          ) : (
+            "Top Watched movies for this week"
+          )}
         </div>
         <Movies
           addToWatchlist={this.addToWatchlist}
