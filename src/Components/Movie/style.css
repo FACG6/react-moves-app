@@ -24,6 +24,7 @@
 
 .add-to-watchlist {
     height: 35px;
+    border: 2px solid #F5C518;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -97,7 +98,7 @@
     align-items: center;
     font-size: 1.2rem;
     border-radius: 5px;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .download:hover {
