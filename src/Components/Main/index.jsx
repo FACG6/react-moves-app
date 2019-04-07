@@ -12,13 +12,16 @@ export default class extends Component {
     this.state = {
       searchValue: "",
       movies: [],
-      userDidSearch: false
+      userDidSearch: false,
+      userDidAdd: false
     };
     this.updateSearchValue = this.updateSearchValue.bind(this);
     this.submitSearch = this.submitSearch.bind(this);
-    this.addToWatchList = this.addToWatchList.bind(this);
+    this.addToWatchlist = this.addToWatchlist.bind(this);
+    this.removeFromWatchlist = this.removeFromWatchlist.bind(this);
+    this.isInWatchlist = this.isInWatchlist.bind(this);
   }
-  addToWatchList({ title, overview, releaseDate, poster, rate, id, genres }) {
+  addToWatchlist({ title, overview, releaseDate, poster, rate, id, genres }) {
     const watchlist = JSON.parse(window.localStorage.getItem("watchlist"));
     const ids = JSON.parse(window.localStorage.getItem("ids"));
     if (!watchlist) {
@@ -67,6 +70,7 @@ export default class extends Component {
         ])
       );
       window.localStorage.setItem("ids", JSON.stringify([...ids, id]));
+      this.setState({ userDidAdd: !this.state.userDidAdd });
     }
     swal.fire({
       toast: true,
@@ -85,12 +89,30 @@ export default class extends Component {
   }
   submitSearch(e) {
     e.preventDefault();
+    if (!this.state.searchValue.trim()) return;
     getMovie(this.state.searchValue).then(response => {
       this.setState({
         movies: response.results.slice(0, 10),
         userDidSearch: true
       });
     });
+  }
+  removeFromWatchlist({ id }) {
+    const watchlist = JSON.parse(window.localStorage.getItem("watchlist"));
+    const ids = JSON.parse(window.localStorage.getItem("ids"));
+
+    const index = ids.indexOf(id);
+
+    watchlist.splice(index, 1);
+    ids.splice(index, 1);
+
+    window.localStorage.setItem("watchlist", JSON.stringify(watchlist));
+    window.localStorage.setItem("ids", JSON.stringify(ids));
+    this.setState({ userDidAdd: !this.state.userDidAdd });
+  }
+  isInWatchlist(id) {
+    const ids = JSON.parse(window.localStorage.getItem("ids"));
+    return ids.includes(id);
   }
   componentDidMount() {
     getTrends().then(response => {
@@ -110,12 +132,15 @@ export default class extends Component {
         />
         <div className="movies-type">
           {this.state.userDidSearch
-            ? "Your Search Results"
+            ? this.state.movies.length !== 0
+              ? "Your Search Results"
+              : "No Results for your search"
             : "Top Watched movies for this week"}
         </div>
         <Movies
-          btnAction={this.addToWatchList}
-          btnText="Add to watchlist"
+          addToWatchlist={this.addToWatchlist}
+          removeFromWatchlist={this.removeFromWatchlist}
+          isInWatchlist={this.isInWatchlist}
           movies={this.state.movies}
         />
       </main>
