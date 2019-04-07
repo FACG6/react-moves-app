@@ -10,7 +10,7 @@ export default () => (
     <Switch>
       <Route
         exact
-        path={"/"}
+        path="/"
         component={() => (
           <React.Fragment>
             <Nav value="Watchlist" href="/watchlist" />
