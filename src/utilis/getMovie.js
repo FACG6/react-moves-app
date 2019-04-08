@@ -1,10 +1,15 @@
-import { API_KEY } from "../config";
+import { SEARCH_MOVIE_URL, SEARCH_NO_QUERY } from "../config";
 
-export default movieName =>
-  fetch(
-    `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${movieName}`
-  )
+export default (movieName, genre, quality, rating) => {
+  if (!movieName)
+    fetch(`${SEARCH_NO_QUERY}${movieName}${genre}${quality}${rating}`)
+      .then(res => res.json())
+      .catch(err => {
+        throw err;
+      });
+  return fetch(`${SEARCH_MOVIE_URL}${movieName}${genre}${quality}${rating}`)
     .then(res => res.json())
     .catch(err => {
       throw err;
     });
+};

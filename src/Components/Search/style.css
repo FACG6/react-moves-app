@@ -4,7 +4,8 @@
 
 .search {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .form {
@@ -34,4 +35,48 @@
     align-items: center;
     border-radius: 0 3px 3px 0;
     font-size: 1.7rem;
+}
+
+.filter-div {
+    display: flex;
+    margin-top: 20px;
+    width: 555px;
+    justify-content: space-between;
+}
+
+.select {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+}
+
+.search-btn {
+    background: #F5C518;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto;
+    border-radius: 5px;
+    height: 40px;
+    margin-top: 24px;
+    font-size: 1.3rem;
+}
+
+.search-btn:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 1px grey;
+}
+
+.select-text {
+    font-family: Roboto;
+    margin-bottom: 15px;
+}
+
+.drop-down {
+    font-family: Roboto;
+    height: 30px;
+    background: #191919;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 1rem;
 }
