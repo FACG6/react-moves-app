@@ -192,7 +192,7 @@ export default class extends Component {
               />
             )
           ) : (
-            "Trending movies for the year"
+            "Top rated movies for this year"
           )}
         </div>
         <Movies
