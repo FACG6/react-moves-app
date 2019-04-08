@@ -7,7 +7,7 @@
 * ### The web page is used to make the user able to search for any movie and see a description of the movie and also able to add the movie to watchlist and also able to download the movie.
 
 ## Solution
-We build a wep app that will allow the user to search throw movies, filter his results, download whatever movie he wants and add any movie to his watchlist.
+* ### We build a wep app that will allow the user to search throw movies, filter his results, download whatever movie he wants and add any movie to his watchlist.
 
 ## Prototype
 Website [prototype](https://www.figma.com/file/0G4p6YdmOLa8FOV3lR54v8Cx/React-MovieApp?node-id=0%3A1)
@@ -21,4 +21,4 @@ Website [prototype](https://www.figma.com/file/0G4p6YdmOLa8FOV3lR54v8Cx/React-Mo
 [https://movies-app-react.herokuapp.com](https://movies-app-react.herokuapp.com)
 ## Team:
 * Dena Hijji
-* Ahmad Abd
+* Ahmad Abdalateef
