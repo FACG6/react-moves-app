@@ -48,8 +48,8 @@ export default ({
         </span>
         <span className="movie-cat movie-details-item">
           <span className="bold-text">Categories: </span>
-          {genres.map(genre => (
-            <div>{genre}</div>
+          {genres.map((genre, index) => (
+            <div key={index}>{genre}</div>
           ))}
         </span>
         <span className="movie-rate movie-details-item">

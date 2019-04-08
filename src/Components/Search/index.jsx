@@ -19,14 +19,13 @@ export default props => (
       <div className="genre-select select">
         <span className="select-text">Genre:</span>
         <select
+          defaultValue="All"
           name="genre"
           id="genre"
           className="drop-down genre"
           onChange={props.updateGenre}
         >
-          <option value="all" selected>
-            All
-          </option>
+          <option value="all">All</option>
           <option value="action">Action</option>
           <option value="comedy">Comedy</option>
           <option value="sci-fi">SCI-FI</option>
@@ -45,14 +44,13 @@ export default props => (
       <div className="rate-select select">
         <span className="select-text">Rating:</span>
         <select
+          defaultValue="All"
           name="rate"
           id="rate"
           className="drop-down rate"
           onChange={props.updateRate}
         >
-          <option value="all" selected>
-            All
-          </option>
+          <option value="all">All</option>
           <option value="1">above 1</option>
           <option value="2">above 2</option>
           <option value="3">above 3</option>
@@ -67,14 +65,13 @@ export default props => (
       <div className="quality-select select">
         <span className="select-text">Quality:</span>
         <select
+          defaultValue="All"
           name="quality"
           id="quality"
           className="drop-down quality"
           onChange={props.updateQuality}
         >
-          <option value="all" selected>
-            All
-          </option>
+          <option value="all">All</option>
           <option value="720p">720p</option>
           <option value="1080p">1080p</option>
           <option value="3D">3D</option>
