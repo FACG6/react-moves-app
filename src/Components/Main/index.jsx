@@ -107,7 +107,6 @@ export default class extends Component {
   }
   submitSearch(e) {
     e.preventDefault();
-    if (!this.state.searchValue.trim()) return;
     getMovie(
       this.state.searchValue,
       this.state.genre,
